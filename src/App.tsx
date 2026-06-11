@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Stats from './components/Stats';
@@ -11,9 +11,11 @@ import OJT from './components/OJT';
 import CallToAction from './components/CallToAction';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import AdminModal from './components/AdminModal';
 
 export default function App() {
   const cursorRef = useRef<HTMLDivElement>(null);
+  const [showAdmin, setShowAdmin] = useState(false);
 
   useEffect(() => {
     const onMouseMove = (e: MouseEvent) => {
@@ -22,8 +24,18 @@ export default function App() {
         cursorRef.current.style.top = `${e.clientY}px`;
       }
     };
+
+    const handleAdminOpen = () => {
+      setShowAdmin(true);
+    };
+
     window.addEventListener('mousemove', onMouseMove);
-    return () => window.removeEventListener('mousemove', onMouseMove);
+    window.addEventListener('openAdmin', handleAdminOpen);
+
+    return () => {
+      window.removeEventListener('mousemove', onMouseMove);
+      window.removeEventListener('openAdmin', handleAdminOpen);
+    };
   }, []);
 
   return (
@@ -52,6 +64,7 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
+      <AdminModal isOpen={showAdmin} onClose={() => setShowAdmin(false)} />
     </div>
   );
 }

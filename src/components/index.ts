@@ -10,3 +10,5 @@ export { default as OJT } from './OJT';
 export { default as CallToAction } from './CallToAction';
 export { default as Contact } from './Contact';
 export { default as Footer } from './Footer';
+export { default as AdminModal } from './AdminModal';
+export { default as ContactModal } from './ContactModal';
