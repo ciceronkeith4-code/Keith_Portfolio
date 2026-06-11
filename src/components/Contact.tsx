@@ -9,7 +9,6 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Store message locally for admin
     const messages = JSON.parse(localStorage.getItem('portfolioMessages') || '[]');
     messages.push({ name, email, message, timestamp: new Date().toISOString() });
     localStorage.setItem('portfolioMessages', JSON.stringify(messages));
@@ -22,9 +21,9 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-12">
+    <section id="contact" className="py-12 bg-black">
       <div className="max-w-2xl mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">Send a Message</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-white">Send a Message</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <input
             type="text"
@@ -32,7 +31,7 @@ export default function Contact() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
-            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder:text-gray-500 focus:outline-none focus:border-white/30 transition text-sm"
+            className="w-full bg-zinc-900/50 border border-white/10 rounded-lg px-4 py-2 text-white placeholder:text-gray-500 focus:outline-none focus:border-white/30 transition text-sm"
           />
           <input
             type="email"
@@ -40,7 +39,7 @@ export default function Contact() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder:text-gray-500 focus:outline-none focus:border-white/30 transition text-sm"
+            className="w-full bg-zinc-900/50 border border-white/10 rounded-lg px-4 py-2 text-white placeholder:text-gray-500 focus:outline-none focus:border-white/30 transition text-sm"
           />
           <textarea
             placeholder="Your Message"
@@ -48,11 +47,11 @@ export default function Contact() {
             onChange={(e) => setMessage(e.target.value)}
             required
             rows={5}
-            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white placeholder:text-gray-500 focus:outline-none focus:border-white/30 transition resize-none text-sm"
+            className="w-full bg-zinc-900/50 border border-white/10 rounded-lg px-4 py-2 text-white placeholder:text-gray-500 focus:outline-none focus:border-white/30 transition resize-none text-sm"
           />
           <button
             type="submit"
-            className="w-full bg-white text-black px-6 py-2 rounded-lg font-semibold hover:bg-gray-200 transition text-sm"
+            className="w-full bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg font-semibold transition text-sm"
           >
             Send Message
           </button>

@@ -22,21 +22,18 @@ export default function OJT() {
       role: 'Your OJT Role',
       duration: 'Start Date - End Date',
       description: 'Add your OJT experience details here',
-      images: [
-        // Add your images here
-        // { src: '/images/ojt1.jpg', alt: 'OJT Experience 1' },
-      ],
+      images: [],
     },
   ];
 
   return (
-    <section id="ojt" className="py-12">
+    <section id="ojt" className="py-12 bg-black">
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold mb-8">OJT Experience</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white">OJT Experience</h2>
         <div className="space-y-8">
           {experiences.map((exp, index) => (
-            <div key={index} className="bg-white/5 border border-white/10 rounded-lg p-6">
-              <h3 className="text-2xl font-bold mb-2">{exp.company}</h3>
+            <div key={index} className="bg-zinc-900/50 border border-white/10 rounded-lg p-6">
+              <h3 className="text-2xl font-bold mb-2 text-white">{exp.company}</h3>
               <p className="text-gray-400 mb-1">{exp.role}</p>
               <p className="text-sm text-gray-500 mb-4">{exp.duration}</p>
               <p className="text-gray-300 mb-6">{exp.description}</p>
@@ -66,7 +63,6 @@ export default function OJT() {
         </div>
       </div>
 
-      {/* Image Preview Modal */}
       {selectedImage && (
         <div
           className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"

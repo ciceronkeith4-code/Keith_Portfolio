@@ -8,7 +8,6 @@ export default function Navbar() {
   const handleLogoClick = () => {
     setAdminClicks(prev => prev + 1);
     if (adminClicks + 1 === 5) {
-      // Open admin modal logic will be handled in App
       window.dispatchEvent(new CustomEvent('openAdmin'));
       setAdminClicks(0);
     } else {
@@ -18,19 +17,19 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-0 w-full z-50 bg-background-DEFAULT/80 backdrop-blur-md border-b border-white/10">
+      <nav className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center h-16">
           <div className="flex items-center gap-2 cursor-pointer" onClick={handleLogoClick}>
-            <div className="text-xl font-bold">KC</div>
+            <div className="text-xl font-bold text-white">KC</div>
             <span className="text-xs opacity-50">✦</span>
           </div>
           <ul className="hidden md:flex space-x-8 items-center">
-            <li><a href="#home" className="hover:text-primary transition text-sm">Home</a></li>
-            <li><a href="#work" className="hover:text-primary transition text-sm">Work</a></li>
+            <li><a href="#home" className="hover:text-red-500 transition text-sm text-white">Home</a></li>
+            <li><a href="#work" className="hover:text-red-500 transition text-sm text-white">Work</a></li>
             <li>
               <button
                 onClick={() => setShowContact(true)}
-                className="hover:text-primary transition text-sm"
+                className="hover:text-red-500 transition text-sm text-white"
               >
                 Contact
               </button>
@@ -38,7 +37,7 @@ export default function Navbar() {
           </ul>
           <button
             onClick={() => setShowContact(true)}
-            className="md:hidden text-sm hover:text-primary transition"
+            className="md:hidden text-sm hover:text-red-500 transition text-white"
           >
             Contact
           </button>
