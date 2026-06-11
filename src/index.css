@@ -12,7 +12,6 @@
   html {
     scroll-behavior: smooth;
     overflow-x: hidden;
-    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='17' viewBox='0 0 13 17'%3E%3Cpath d='M1 1L1 13L4 10L6 15L8.5 14L6.5 9L10 9Z' fill='white' stroke='black' stroke-width='1.2' stroke-linejoin='round'/%3E%3C/svg%3E") 1 1, auto;
   }
 
   body {
@@ -22,11 +21,6 @@
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='17' viewBox='0 0 13 17'%3E%3Cpath d='M1 1L1 13L4 10L6 15L8.5 14L6.5 9L10 9Z' fill='white' stroke='black' stroke-width='1.2' stroke-linejoin='round'/%3E%3C/svg%3E") 1 1, auto;
-  }
-
-  a, button, [role="button"], input[type="submit"], input[type="button"], select {
-    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='18' viewBox='0 0 14 18'%3E%3Crect x='5' y='0' width='3' height='7' rx='1' fill='white' stroke='black' stroke-width='1'/%3E%3Cpath d='M2 8Q2 7 4 7L4 13Q2 13 2 12Z' fill='white' stroke='black' stroke-width='1'/%3E%3Cpath d='M4 7L10 7L11 8L11 14Q11 16 7 16L4 16Q2 16 2 14L2 8Z' fill='white' stroke='black' stroke-width='1'/%3E%3C/svg%3E") 5 0, pointer;
   }
 
   ::selection {
@@ -35,7 +29,7 @@
   }
 
   ::-webkit-scrollbar {
-    width: 4px;
+    width: 8px;
   }
 
   ::-webkit-scrollbar-track {
@@ -44,7 +38,7 @@
 
   ::-webkit-scrollbar-thumb {
     background: #c41230;
-    border-radius: 2px;
+    border-radius: 4px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
@@ -71,31 +65,11 @@
     box-shadow: 0 0 30px rgba(196, 18, 48, 0.25), 0 0 60px rgba(196, 18, 48, 0.1);
   }
 
-  .glow-red-sm {
-    box-shadow: 0 0 15px rgba(196, 18, 48, 0.2);
-  }
-
   .text-gradient {
     background: linear-gradient(135deg, #ffffff 0%, #e4e4e7 50%, #c41230 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-  }
-
-  .text-gradient-red {
-    background: linear-gradient(135deg, #f43f5e 0%, #c41230 50%, #8b0e22 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .section-padding {
-    padding: 3.5rem 1.5rem;
-  }
-
-  .container-max {
-    max-width: 1200px;
-    margin: 0 auto;
   }
 
   .btn-primary {
@@ -107,10 +81,6 @@
   .btn-primary:hover {
     box-shadow: 0 8px 30px rgba(196, 18, 48, 0.5);
     transform: translateY(-2px);
-  }
-
-  .btn-primary:active {
-    transform: translateY(0px) scale(0.98);
   }
 
   .btn-secondary {
@@ -126,10 +96,6 @@
     box-shadow: 0 0 20px rgba(196, 18, 48, 0.15);
     transform: translateY(-2px);
   }
-
-  .btn-secondary:active {
-    transform: translateY(0px) scale(0.98);
-  }
 }
 
 @layer utilities {
@@ -141,79 +107,9 @@
   .animate-delay-600 { animation-delay: 600ms; }
   .animate-delay-700 { animation-delay: 700ms; }
   .animate-delay-800 { animation-delay: 800ms; }
-  .animate-delay-1000 { animation-delay: 1000ms; }
-  .animate-delay-1200 { animation-delay: 1200ms; }
-
-  .opacity-0-init { opacity: 0; }
-
-  /* Pixel badge styles */
-  .pixel-badge {
-    @apply font-pixel text-xs px-3 py-1 rounded-sm border-2 border-crimson-400 bg-background-DEFAULT text-crimson-300;
-    image-rendering: pixelated;
-  }
-
-  /* Pixel glow effect */
-  .pixel-glow {
-    box-shadow: 0 0 10px rgba(196, 18, 48, 0.4), inset 0 0 10px rgba(196, 18, 48, 0.1);
-  }
-
-  /* Pixel corner accent */
-  .pixel-corner-accent {
-    position: relative;
-  }
-
-  .pixel-corner-accent::before {
-    content: '';
-    position: absolute;
-    top: -8px;
-    left: -8px;
-    width: 16px;
-    height: 16px;
-    border: 2px solid rgba(196, 18, 48, 0.5);
-    border-right: none;
-    border-bottom: none;
-  }
-
-  .pixel-corner-accent::after {
-    content: '';
-    position: absolute;
-    top: -8px;
-    right: -8px;
-    width: 16px;
-    height: 16px;
-    border: 2px solid rgba(196, 18, 48, 0.5);
-    border-left: none;
-    border-bottom: none;
-  }
-
-  /* Pixel button styles */
-  .pixel-btn {
-    @apply font-pixel text-xs px-4 py-2 rounded-sm border-2 transition-all duration-200;
-    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
-  }
-
-  .pixel-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
-  }
-
-  .pixel-btn:active {
-    transform: translateY(0);
-    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
-  }
-
-  /* Floating pixel stars animation */
-  @keyframes float-pixel {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-8px) rotate(45deg); }
-  }
-
-  .float-pixel {
-    animation: float-pixel 3s ease-in-out infinite;
-  }
 }
 
-/* Intersection observer reveal classes */
+/* Reveal animations */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
@@ -223,28 +119,6 @@
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-.reveal-left {
-  opacity: 0;
-  transform: translateX(-30px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-
-.reveal-left.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.reveal-right {
-  opacity: 0;
-  transform: translateX(30px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-
-.reveal-right.visible {
-  opacity: 1;
-  transform: translateX(0);
 }
 
 /* Cursor glow */
@@ -264,7 +138,7 @@
 .noise-overlay {
   position: fixed;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' seed='2'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='256' height='256' fill='white' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 9999;
   opacity: 0.4;

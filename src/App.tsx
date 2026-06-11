@@ -39,7 +39,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-background-DEFAULT text-white overflow-x-hidden">
+    <div className="relative min-h-screen bg-black text-white overflow-x-hidden">
       {/* Cursor glow */}
       <div
         ref={cursorRef}
@@ -51,7 +51,7 @@ export default function App() {
       <div className="noise-overlay" aria-hidden="true" />
 
       <Navbar />
-      <main>
+      <main className="relative z-10">
         <Hero />
         <Stats />
         <About />
@@ -67,4 +67,3 @@ export default function App() {
       <AdminModal isOpen={showAdmin} onClose={() => setShowAdmin(false)} />
     </div>
   );
-}
